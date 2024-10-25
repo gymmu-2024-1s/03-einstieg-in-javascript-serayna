@@ -82,7 +82,7 @@ export function aufgabe04(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
-    if (currentElement === "einfachNurText") {
+    if (currentElement === "") {
       count = count + 1
     } else if (currentElement === "E") {
       count++
@@ -91,3 +91,21 @@ export function aufgabe04(args) {
   return count
 }
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
+
+export function aufgabe08(args) {
+  const result = []
+
+  for (const currentElement of args) {
+    if (currentElement === "e") {
+      result.push("3") // Ersetze "e" durch "3"
+    } else if (currentElement === "") {
+      // do nothing
+    } else {
+      result.push(currentElement) // Behalte alle anderen Zeichen bei
+    }
+  }
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
