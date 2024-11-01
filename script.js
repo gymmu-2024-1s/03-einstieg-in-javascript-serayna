@@ -109,3 +109,21 @@ export function aufgabe08(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
+export function aufgabe09(args) {
+  function firstSentence() {
+    const text = "Hier ist Text. Und hier noch mehr."
+    const result = []
+    for (let i = 0; i < text.length; i++) {
+      result.push(text[i])
+      if (text[i] === ".") {
+        if (text.length + 6 === i) {
+          return [result.join(""), false]
+        } else {
+          return [result.join(""), true]
+        }
+      }
+    }
+    return [result.join(""), false]
+  }
+}
+linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
