@@ -152,7 +152,7 @@ export function aufgabe12(args) {
   }
   return -1 // or null
 }
-linkupExerciseHandler("[data-click=aufgabe12]", 12)
+linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
 
 export function aufgabe13(args) {
   const input = args
@@ -167,7 +167,7 @@ export function aufgabe13(args) {
   return lastindex
 }
 
-linkupExerciseHandler("[data-click=aufgabe13]", 13)
+linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
 
 export function aufgabe14(args) {
   const input = args
@@ -178,16 +178,25 @@ export function aufgabe14(args) {
     const currentElement = input[i]
     if (currentElement === "e") {
       result.push(currentElement)
-      // Zähle Leerzeichen mit i + 1
-      for (let j = i + 1; j < input.length; j++) {
-        const nextElement = input[j]
-        if (nextElement === " ") {
-          result.push(nextElement)
-        }
-      }
     }
   }
+
   return -1 // or null
 }
 
 linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
+
+export function aufgabe15(args) {
+  const input = args
+  const result = []
+  //Lese nur bis zum Leerzeichen ein
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === " ") {
+      break
+    }
+    result.push(currentElement)
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
