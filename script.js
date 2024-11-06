@@ -133,6 +133,32 @@ export function aufgabe11(args) {
   const input = args
   const result = []
 
-  return result.join("")
+  // Speichere den ascii wert vom ersten zeichen in input
+  const ascii = input[0].charCodeAt(0)
+  return ascii
+  // Gib uns das ascii wert vom ersten zeichen in input zurueck
 }
 linkupExerciseHandler("[data-click=aufgabe11]", aufgabe11)
+
+export function aufgabe12(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    //Suche die Position des ersten e's
+    if (currentElement === "e") {
+      return i
+    }
+  }
+  return -1 // or null
+}
+
+linkupExerciseHandler('[data-click=aufgabe12]',12)
+
+
+
+}
+
+linkupExerciseHandler("[data-click=aufgabe12]", 12)
