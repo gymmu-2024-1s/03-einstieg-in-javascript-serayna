@@ -178,6 +178,13 @@ export function aufgabe14(args) {
     const currentElement = input[i]
     if (currentElement === "e") {
       result.push(currentElement)
+      // Zähle Leerzeichen mit i + 1
+      for (let j = i + 1; j < input.length; j++) {
+        const nextElement = input[j]
+        if (nextElement === " ") {
+          result.push(nextElement)
+        }
+      }
     }
   }
   return -1 // or null
