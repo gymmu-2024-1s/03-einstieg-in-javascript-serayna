@@ -200,3 +200,15 @@ export function aufgabe15(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
+
+export function aufgabe19(args) {
+  const input = args
+  const result = []
+  // schreibe jedes Zeichen doppelt
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    result.push(currentElement)
+  }
+
+  return result.join("")
+}
