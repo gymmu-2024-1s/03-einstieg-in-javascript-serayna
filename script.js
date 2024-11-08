@@ -214,3 +214,25 @@ export function aufgabe19(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
+
+export function aufgabe20(args) {
+  const input = args
+  const result = []
+
+  let allGood = true
+
+  //Prüfe ob nach jedem "." ein Leerzeichen kommt
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === ".") {
+      // prüfe ob das nächste Zeichen ein Leerzeichen ist
+      if (input[i + 1] === " ") {
+        // mache nichts
+      } else {
+        allGood = false
+      }
+    }
+  }
+  return allGood
+}
+linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
