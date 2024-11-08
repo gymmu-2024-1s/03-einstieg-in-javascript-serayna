@@ -249,3 +249,21 @@ export function aufgabe21(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
+
+export function aufgabe22(args) {
+  const input = args
+  const result = []
+
+  for (const currentElement of args) {
+    if (currentElement === "") {
+      result.push("_") // Ersetze jedes Zeichen durch "_"
+    } else if (currentElement === "") {
+      // do nothing
+    } else {
+      result.push(currentElement) //Behalte alle anderen Eingaben bei
+    }
+  }
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
