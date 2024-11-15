@@ -113,14 +113,17 @@ linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
 export function aufgabe05(args) {
   const input = args
   const result = []
+
+  let hasCapitalLetter = false
   // Schrieb eine Funktion, die testet, ob ein Grossbuchstaben vorkommt
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    if (currentElement === "E") {
-      result.push("E")
+    const ascii = currentElement.charCodeAt(0)
+    if (ascii >= 65 && ascii <= 90) {
+      hasCapitalLetter = true
     }
   }
-  return result.join("")
+  return hasCapitalLetter
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
