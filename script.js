@@ -337,8 +337,21 @@ export function aufgabe22(args) {
 linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
 
 export function aufgabe23(args) {
-  // Verdopple das erste Zeichen und hänge es hinten an die Eingabe an
-  return args[0] + args
+  const input = args
+  const result = [] //Leere Liste, in der wir das Resultat anhängen
+  const firstelement = input[0]
+
+  // Hänge firstelement an reult an
+  result.push(firstelement)
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    result.push(currentElement)
+  }
+
+  result.push(firstelement) //Schreibe das erste Zeichen am Ende
+
+  return result.join("")
 }
 
 linkupExerciseHandler("[data-click=aufgabe23]", aufgabe23)
