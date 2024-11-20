@@ -337,17 +337,8 @@ export function aufgabe22(args) {
 linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
 
 export function aufgabe23(args) {
-  // Das erste Zeichen der Eingabe sollen verdoppelt werden
-  const input = args
-  const result = []
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    if (i === 0) {
-      result.push(currentElement)
-      result.push(currentElement) // Verdopple das erste Zeichen
-    } else {
-      result.push(currentElement)
-    }
-  }
+  // Verdopple das erste Zeichen und hänge es hinten an die Eingabe an
+  return args[0] + args
 }
+
 linkupExerciseHandler("[data-click=aufgabe23]", aufgabe23)
