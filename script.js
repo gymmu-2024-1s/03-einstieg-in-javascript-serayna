@@ -341,7 +341,7 @@ export function aufgabe23(args) {
   const result = [] //Leere Liste, in der wir das Resultat anhängen
   const firstelement = input[0]
 
-  // Hänge firstelement an reult an
+  // Hänge firstelement an die Liste an
   result.push(firstelement)
 
   for (let i = 0; i < input.length; i++) {
@@ -375,3 +375,20 @@ export function aufgabe24(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
+
+export function aufgabe25(args) {
+  const input = args
+  const result = []
+  //Lösche das Zeichen welches in der Mitte des Textes steht
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (i === Math.floor(input.length / 2)) {
+      // do nothing
+    } else {
+      result.push(currentElement)
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe25]", aufgabe25)
