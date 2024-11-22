@@ -439,6 +439,13 @@ export function aufgabe25(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe25]", aufgabe25)
 
+export function aufgabe26(args) {
+  const input = args
+  const result = []
+
+  return result.join("")
+}
+
 export function aufgabe27(args) {
   const input = args
   const result = []
@@ -462,21 +469,9 @@ linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
 export function aufgabe28(args) {
   const input = args
   const result = []
-  // Teste ob 2 Zeichen von einem Leerschlag getrennt sind. Wenn es stimmt gebe die Summe an. Wenn nicht dann eine Fehlermeldung
-  let hasleerschlag = true
+  // Teste ob 2 Zeichen von einem Leerschlag getrennt sind.
 
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    if (currentElement === " ") {
-      hasleerschlag = false
-    }
-  }
-
-  if (hasleerschlag) {
-    return false
-  } else {
-    return true
-  }
+  // Wenn es stimmt gebe die Summe an. Wenn nicht dann eine Fehlermeldung
 }
 
 linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
