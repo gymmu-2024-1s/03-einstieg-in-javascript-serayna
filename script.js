@@ -193,7 +193,7 @@ export function aufgabe11(args) {
   if (input.length > 1) {
     return null
 
-    //--> Der Code gibt null terug, wenn input mehr als ein Zeichen enthaltet
+    //--> Der Code gibt null zurück, wenn input mehr als ein Zeichen enthaltet
   } else if (input.length === 0) {
     return null // Gibt 0 zurück
   }
@@ -232,17 +232,16 @@ linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
 
 export function aufgabe14(args) {
   const input = args
-  const result = []
-
-  //Suche das 3. e in einem Text
+  let count = 0
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    if (currentElement === "e") {
-      result.push(currentElement)
+    if (input[i] === "e") {
+      count++
+      if (count === 3) {
+        return i
+      }
     }
   }
-
-  return -1 // or null
+  return -1
 }
 
 linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
