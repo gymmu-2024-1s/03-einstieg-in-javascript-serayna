@@ -55,7 +55,7 @@ export function aufgabe02(args) {
 
   return result.join("")
 }
-linkupExerciseHandler("[data-click=aufgabe02]", aufgabe02)
+linkupExerciseHandler("[data-click=aufgabe02]", aufgabe02) // Wenn man das nicht macht, funktioniert der Button nicht
 
 export function aufgabe03(args) {
   const input = args
@@ -71,7 +71,7 @@ export function aufgabe03(args) {
       count++
     }
   }
-  return count
+  return count // Gibt zurück, was es gezählt hat
 }
 linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
 
@@ -89,7 +89,7 @@ export function aufgabe04(args) {
   if (count === 0) {
   }
 
-  return count + 1
+  return count + 1 // Muss +1 sein, damit es nicht nur die Leerzeichen zählt
 }
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
@@ -115,13 +115,14 @@ export function aufgabe05(args) {
   const input = args
   const result = []
 
-  let hasCapitalLetter = false
+  let hasCapitalLetter = false // Zuerst sagen, dass es nicht stimmt, dann prüfen, ob es stimmt oder nicht
   // Schrieb eine Funktion, die testet, ob ein Grossbuchstaben vorkommt
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     const ascii = currentElement.charCodeAt(0)
     if (ascii >= 65 && ascii <= 90) {
-      hasCapitalLetter = true
+      // Muss zwischen 65 und 90 liegen, damit es stimmen kann
+      hasCapitalLetter = true // Liegt zwischen 65 und 90 dehsalb "true"
     }
   }
   return hasCapitalLetter
@@ -141,7 +142,7 @@ export function aufgabe06(args) {
       hasSonderzeichen = true
     }
   }
-  return hasSonderzeichen
+  return hasSonderzeichen // Gibt das Ergebnis zurück, also "true"
 }
 linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
 
@@ -159,7 +160,7 @@ export function aufgabe07(args) {
       }
     }
   }
-  return false
+  return false // Wenn es bis hier nicht gefunden wurde, wird false zurückgegeben
 }
 linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
 
@@ -192,7 +193,7 @@ export function aufgabe10(args) {
     const currentElement = input[i]
     const ascii = currentElement.charCodeAt(0)
     if (ascii >= 48 && ascii <= 57) {
-      // Wenn es zwischen 48 und 57 ist stimmt es
+      // Wenn es zwischen 48 und 57 ist, stimmt es
       hasCorrectRGB = true
       return true
     }
@@ -208,11 +209,11 @@ export function aufgabe11(args) {
   let asciiCode = 0
 
   //Speichere den ASCII-Code vom ersten Zeichen
-  asciiCode = input.charCodeAt(0) //--> Der Code gibt den ASCII-Code des ersten Zeichens zurück.
+  asciiCode = input.charCodeAt(0) //--> Der Code gibt den ASCII-Code des ersten Zeichens zurück
   if (input.length > 1) {
     return null
 
-    //--> Der Code gibt null zurück, wenn input mehr als ein Zeichen enthaltet
+    //--> Der Code gibt null zurück, wenn der Input mehr als ein Zeichen enthält
   } else if (input.length === 0) {
     return null // Gibt 0 zurück
   }
@@ -230,7 +231,7 @@ export function aufgabe12(args) {
       return i
     }
   }
-  return -1 // or null
+  return -1 // or null // Gibt -1 oder 0 zurück
 }
 linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
 
@@ -260,9 +261,8 @@ export function aufgabe14(args) {
       }
     }
   }
-  return -1
+  return -1 // Soll -1 zurückgeben
 }
-
 linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
 
 export function aufgabe15(args) {
@@ -287,7 +287,7 @@ export function aufgabe16(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === " ") {
-      continue
+      continue //Macht es weiter
     }
     result.push(currentElement)
   }
@@ -346,7 +346,7 @@ export function aufgabe20(args) {
       }
     }
   }
-  return allGood
+  return allGood //Gibt uns das "allGood"zurück, da dieses "false" ist, gibt es "false" zurück
 }
 linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
 
@@ -424,12 +424,12 @@ linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
 export function aufgabe25(args) {
   const input = args
   const result = []
-  //Lösche das Zeichen welches in der Mitte des Textes steht
+  //Lösche das Zeichen, welches in der Mitte des Textes steht
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (i === Math.floor(input.length / 2)) {
-      //Die Methode Math.floor() rundet eine Zahl auf die nächste ganze Zahl ab.
+      //Die Methode Math.floor() rundet eine Zahl auf die nächste ganze Zahl ab
       // do nothing
     } else {
       result.push(currentElement)
@@ -463,5 +463,20 @@ export function aufgabe28(args) {
   const input = args
   const result = []
   // Teste ob 2 Zeichen von einem Leerschlag getrennt sind. Wenn es stimmt gebe die Summe an. Wenn nicht dann eine Fehlermeldung
+  let hasleerschlag = true
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === " ") {
+      hasleerschlag = false
+    }
+  }
+
+  if (hasleerschlag) {
+    return false
+  } else {
+    return true
+  }
 }
+
 linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
