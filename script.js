@@ -89,7 +89,7 @@ export function aufgabe04(args) {
   if (count === 0) {
   }
 
-  return count
+  return count + 1
 }
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
@@ -393,3 +393,10 @@ export function aufgabe25(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe25]", aufgabe25)
+
+export function aufgabe2x(args) {
+  const input = args
+  const result = []
+
+  return result.join("")
+}
