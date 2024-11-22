@@ -145,6 +145,24 @@ export function aufgabe06(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
 
+export function aufgabe07(args) {
+  const input = args
+  const result = []
+  //Sollte das Wort 'und' erkennen
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "u") {
+      if (input[i + 1] === "n") {
+        if (input[i + 2] === "d") {
+          return true
+        }
+      }
+    }
+  }
+  return false
+}
+linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
+
 export function aufgabe09(args) {
   const input = args
   const result = []
@@ -167,11 +185,19 @@ linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
 export function aufgabe11(args) {
   const input = args
   const result = []
+  //Erstelle eine neue Variable um den ASCII-Code zu speichern.
+  let asciiCode = 0
 
-  // Speichere den ascii wert vom ersten zeichen in input
-  const ascii = input[0].charCodeAt(0)
-  return ascii
-  // Gib uns das ascii wert vom ersten zeichen in input zurueck
+  //Speichere den ASCII-Code vom ersten Zeichen
+  asciiCode = input.charCodeAt(0) //--> Der Code gibt den ASCII-Code des ersten Zeichens zurück.
+  if (input.length > 1) {
+    return null
+
+    //--> Der Code gibt null terug, wenn input mehr als ein Zeichen enthaltet
+  } else if (input.length === 0) {
+    return null // Gibt 0 zurück
+  }
+  return asciiCode
 }
 linkupExerciseHandler("[data-click=aufgabe11]", aufgabe11)
 
@@ -385,6 +411,7 @@ export function aufgabe25(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (i === Math.floor(input.length / 2)) {
+      //Die Methode Math.floor() rundet eine Zahl auf die nächste ganze Zahl ab.
       // do nothing
     } else {
       result.push(currentElement)
@@ -403,6 +430,7 @@ export function aufgabe27(args) {
     const currentElement = input[i]
     const ascii = currentElement.charCodeAt(0)
     if (ascii >= 48 && ascii <= 57) {
+      // Wenn es zwischen 48 und 57 ist, ist es eine Zahl, wenn nicht, ist es keine Zahl
       // do nothing
     } else {
       return false
@@ -412,3 +440,10 @@ export function aufgabe27(args) {
   return true
 }
 linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
+
+export function aufgabe28(args) {
+  const input = args
+  const result = []
+  // Teste ob 2 Zeichen von einem Leerschlag getrennt sind. Wenn es stimmt gebe die Summe an. Wenn nicht dann eine Fehlermeldung
+}
+linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
