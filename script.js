@@ -74,20 +74,21 @@ export function aufgabe03(args) {
   return count
 }
 linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
+
 export function aufgabe04(args) {
   const input = args
   const result = []
-
+  // Zähle alle Wörter des Textes und speichere die Anzahl in einer Variable
   let count = 0
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-
-    if (currentElement === "") {
+    if (currentElement === " ") {
       count = count + 1
-    } else if (currentElement === "E") {
-      count++
     }
   }
+  if (count === 0) {
+  }
+
   return count
 }
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
