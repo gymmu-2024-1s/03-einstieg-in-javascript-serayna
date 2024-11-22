@@ -192,11 +192,14 @@ export function aufgabe10(args) {
     const currentElement = input[i]
     const ascii = currentElement.charCodeAt(0)
     if (ascii >= 48 && ascii <= 57) {
+      // Wenn es zwischen 48 und 57 ist stimmt es
       hasCorrectRGB = true
+      return true
     }
   }
-  return false // or hasCorrectRGB
+  return false // Gibt false zurück, wenn es nicht stimmt
 }
+linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
 
 export function aufgabe11(args) {
   const input = args
