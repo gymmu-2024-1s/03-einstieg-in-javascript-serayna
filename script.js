@@ -94,9 +94,12 @@ export function aufgabe04(args) {
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
 export function aufgabe08(args) {
+  const input = args
   const result = []
 
-  for (const currentElement of args) {
+  for (const currentElement of input) {
+    // Alternative Schreibeweise für das for (let i = 0; i < input.length; i++)
+    const currentElement = input[i]
     if (currentElement === "e") {
       result.push("3") // Ersetze "e" durch "3"
     } else if (currentElement === "") {
@@ -492,8 +495,9 @@ export function EigeneAufgabe1(args) {
   const input = args
   const result = []
 
-  for (const currentElement of args) {
-    //
+  for (const currentElement of input) {
+    // Alternative Schreibweise für das for (let i = 0; i < input.length; i++)
+
     if (currentElement === "u") {
       result.push(":)") // Ersetze "u" durch ":)"
     } else if (currentElement === "") {
@@ -507,3 +511,19 @@ export function EigeneAufgabe1(args) {
 }
 
 linkupExerciseHandler("[data-click=EigeneAufgabe1]", EigeneAufgabe1)
+
+export function EigeneAufgabe2(args) {
+  const input = args
+  const result = []
+  let hasS = false // Zuerst sagen, dass es nicht stimmt, dann prüfen, ob es stimmt oder nicht
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
+    if (ascii === 115) {
+      // Muss zwischen 115 und 116 liegen, damit es stimmen kann
+      hasS = true // Liegt zwischen 115 und 116 dehsalb "true"
+    }
+  }
+  return hasS
+}
+linkupExerciseHandler("[data-click=EigeneAufgabe2]", EigeneAufgabe2)
