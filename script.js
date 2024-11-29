@@ -520,10 +520,18 @@ export function EigeneAufgabe2(args) {
     const currentElement = input[i]
     const ascii = currentElement.charCodeAt(0)
     if (ascii === 115) {
-      // Muss zwischen 115 und 116 liegen, damit es stimmen kann
-      hasS = true // Liegt zwischen 115 und 116 dehsalb "true"
+      // Wenn es 115 ist, stimmt es. Dann ist es "true"
+      hasS = true // Ist 115 dehsalb "true"
     }
   }
-  return hasS
+  return hasS // Hat kein S im Text deshalb gibt es "false" zurück
 }
 linkupExerciseHandler("[data-click=EigeneAufgabe2]", EigeneAufgabe2)
+
+export function EigeneAufgabe3(args) {
+  const input = args
+  const result = []
+  // Ersetze das Wort "Text" durch "Seraynas Aufgabe3"
+}
+
+linkupExerciseHandler("[data-click=EigeneAufgabe3]", EigeneAufgabe3)
