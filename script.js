@@ -442,7 +442,7 @@ linkupExerciseHandler("[data-click=aufgabe25]", aufgabe25)
 export function aufgabe26(args) {
   const input = args
   const result = []
-  // Vertaushe das erste und das zweite Zeichen
+  // Vergleiche und vertausche das erste und das zweite Zeichen
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
