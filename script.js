@@ -488,11 +488,12 @@ export function aufgabe28(args) {
 
 linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
 
-export function EigeneAufgabe01(args) {
+export function EigeneAufgabe1(args) {
   const input = args
   const result = []
 
   for (const currentElement of args) {
+    //
     if (currentElement === "u") {
       result.push(":)") // Ersetze "u" durch ":)"
     } else if (currentElement === "") {
@@ -505,4 +506,4 @@ export function EigeneAufgabe01(args) {
   return result.join("")
 }
 
-linkupExerciseHandler("[data-click=EigeneAufgabe01]", EigeneAufgabe01)
+linkupExerciseHandler("[data-click=EigeneAufgabe1]", EigeneAufgabe1)
