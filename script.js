@@ -531,7 +531,6 @@ linkupExerciseHandler("[data-click=EigeneAufgabe2]", EigeneAufgabe2)
 export function EigeneAufgabe3(args) {
   const input = args
   const result = []
-  // Ersetze das Wort "Text" durch "Seraynas Aufgabe3"
-}
 
-linkupExerciseHandler("[data-click=EigeneAufgabe3]", EigeneAufgabe3)
+  return result.join("")
+}
