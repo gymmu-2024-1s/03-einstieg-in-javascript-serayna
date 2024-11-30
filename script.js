@@ -97,21 +97,19 @@ export function aufgabe08(args) {
   const input = args
   const result = []
 
-  for (const currentElement of input) {
-    // Alternative Schreibeweise für das for (let i = 0; i < input.length; i++)
+  for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "e") {
-      result.push("3") // Ersetze "e" durch "3"
+      result.push("3") // Ersetze alle e's durch 3
     } else if (currentElement === "") {
       // do nothing
     } else {
-      result.push(currentElement) // Behalte alle anderen Zeichen bei
+      result.push(currentElement) //Behalte alle anderen Zeichen bei
     }
   }
 
   return result.join("")
 }
-
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
 
 export function aufgabe05(args) {
