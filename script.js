@@ -444,19 +444,23 @@ export function aufgabe26(args) {
   const input = args
   const result = []
   // Vergleiche und vertausche das erste und das zweite Zeichen
+  const firstelement = input[0]
+  const secondelement = input[1]
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (i === 0) {
-      result.push(input[1])
+      result.push(secondelement)
     } else if (i === 1) {
-      result.push(input[0])
+      result.push(firstelement)
     } else {
       result.push(currentElement)
     }
   }
+
   return result.join("")
 }
+
 linkupExerciseHandler("[data-click=aufgabe26]", aufgabe26)
 
 export function aufgabe27(args) {
