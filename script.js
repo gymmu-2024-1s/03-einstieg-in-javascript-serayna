@@ -529,6 +529,16 @@ linkupExerciseHandler("[data-click=EigeneAufgabe2]", EigeneAufgabe2)
 export function EigeneAufgabe3(args) {
   const input = args
   const result = []
+  // Übersetze den Text in den Ascii code und rechne + 4
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
+    const code = ascii + 4 // Man macht eine neue Variable
+    const letter = String.fromCharCode(code)
+    result.push(letter) // Man rechnet + 4, damit nachher ein anderer Buchtsabe heraus kommt
+  }
 
   return result.join("")
 }
+linkupExerciseHandler("[data-click=EigeneAufgabe3]", EigeneAufgabe3)
