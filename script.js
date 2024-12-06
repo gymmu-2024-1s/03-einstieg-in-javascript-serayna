@@ -487,8 +487,6 @@ export function aufgabe28(args) {
   const input = args
   const result = []
   // Teste ob 2 Zeichen von einem Leerschlag getrennt sind.
-
-  // Wenn es stimmt gebe die Summe an. Wenn nicht dann eine Fehlermeldung
 }
 
 linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
