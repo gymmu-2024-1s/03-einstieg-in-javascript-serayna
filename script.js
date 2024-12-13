@@ -597,8 +597,22 @@ linkupExerciseHandler("[data-click=Selectionsort]", Selectionsort)
 export function Radixsort(args) {
   const input = args
   const result = []
+  const max = args
+  // Übersetze den Text in den Ascii code und rechne + 4
 
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
+    const code = ascii // Man macht eine neue Variable
+    const letter = String.fromCharCode(code)
+    result.push(code) // Man rechnet + 4, damit nachher ein anderer Buchtsabe heraus kommt
+  }
   return result.join("")
-}
 
-linkupExerciseHandler("[data-click=Radixsort]", Radixsort)
+  for (let exp = 1; Math.floor(max / exp) > 0; exp *= 10) {
+    countingSort(input, exp)
+  }
+
+  return input
+}
+linkupExerciseHandler("[data-click= Radixsort]", Radixsort)
