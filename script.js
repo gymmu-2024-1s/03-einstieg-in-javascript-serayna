@@ -78,18 +78,43 @@ linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
 export function aufgabe04(args) {
   const input = args
   const result = []
-  // Zähle alle Wörter des Textes und speichere die Anzahl in einer Variable
-  let count = 0
+
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    if (currentElement === " ") {
-      count = count + 1
+    const ascii = currentElement.charCodeAt(0)
+
+    if (ascii >= 65 && ascii <= 90) {
+      // Wenn es zwischen 65 und 90 ist, ist es ein Grossbuchstabe.
+      result.push(currentElement)
+    } else if (ascii >= 97 && ascii <= 122) {
+      // Wenn es zwischen 97 und 122 ist, ist es ein Kleinbuchstabe.
+      result.push(currentElement)
+    } else if (ascii === 32) {
+      // Leerzeichen
+      result.push(currentElement)
     }
   }
-  if (count === 0) {
-  }
 
-  return count + 1 // Muss +1 sein, damit es nicht nur die Leerzeichen zählt
+  const result2 = []
+  for (let i = 0; i < result.length; i++) {
+    const currentElement = result[i]
+    const nextElement = result[i + 1]
+    if (currentElement === " " && nextElement === " ") {
+      // Es sind 2 Leerzeichen hintereinander, wir ignoreren das Erste
+    } else {
+      result2.push(currentElement)
+    }
+  }
+  // Nun können wir die Leerzeichen zählen
+  let count = 0
+  for (let i = 0; i < result2.length; i++) {
+    const currentElement = result2[i]
+    if (currentElement === " ") {
+      count++
+    }
+  }
+  // Da es ein Wort mehr gibt, wie Leerzeichen, geben wir Leerzeichen zurück
+  return count + 1
 }
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
