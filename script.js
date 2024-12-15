@@ -346,6 +346,17 @@ export function aufgabe17(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
 
+export function aufgabe18(args) {
+  const input = args
+  //Wir können die Aufgabe 17 verwenden um eine Liste zu erhalten
+  const neueaufagbe = aufgabe17(input)
+  //Wir generieren eine unsere Aufgabenliste
+  const result = []
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe18]", aufgabe18)
+
 export function aufgabe19(args) {
   const input = args
   const result = []
