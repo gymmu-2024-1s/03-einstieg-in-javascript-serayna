@@ -324,20 +324,26 @@ linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
 
 export function aufgabe17(args) {
   const input = args
-  const result = []
-  // Schreibe hinter jedem Wort ein ","
+  const totallist = []
+  const currentlist = []
+
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    if (currentElement === "") {
-      result.push(",")
+
+    // Wenn wir auf ein Leerzeichen treffen, schreiben wir alles was wir bis jetzt haben, in die totallist
+    if (currentElement === " ") {
+      totallist.push(currentlist.join(""))
+      currentlist.length = 0
     } else {
-      result.push(currentElement)
+      currentlist.push(currentElement)
     }
   }
 
-  return result.join("")
-}
+  // Wir schrreiben alles, was wir noch bis zum Ende gelesen haben, in die Liste
+  totallist.push(currentlist.join(""))
 
+  return totallist
+}
 linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
 
 export function aufgabe19(args) {
