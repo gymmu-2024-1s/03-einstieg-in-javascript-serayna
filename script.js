@@ -324,35 +324,46 @@ linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
 
 export function aufgabe17(args) {
   const input = args
-  const totallist = []
-  const currentlist = []
+  const totalList = []
+  const currentList = []
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
     // Wenn wir auf ein Leerzeichen treffen, schreiben wir alles was wir bis jetzt haben, in die totallist
     if (currentElement === " ") {
-      totallist.push(currentlist.join(""))
-      currentlist.length = 0
+      totalList.push(currentList.join(""))
+      currentList.length = 0
     } else {
-      currentlist.push(currentElement)
+      currentList.push(currentElement)
     }
   }
 
   // Wir schrreiben alles, was wir noch bis zum Ende gelesen haben, in die Liste
-  totallist.push(currentlist.join(""))
+  totalList.push(currentList.join(""))
 
-  return totallist
+  return totalList
 }
 linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
 
 export function aufgabe18(args) {
   const input = args
   //Wir können die Aufgabe 17 verwenden um eine Liste zu erhalten
-  const neueaufagbe = aufgabe17(input)
+  const nameAndAge = aufgabe17(input)
+
   //Wir generieren eine unsere Aufgabenliste
   const result = []
 
+  // Hier schreiben wir ganze Worte in die Liste
+  result.push("Sie heissen")
+
+  // Wir setzen die Liste dann zusammen, sodass die Name und Alter dann an der richtigen Stelle stehen
+  result.push(nameAndAge[0])
+  result.push("und sind")
+  result.push(nameAndAge[1])
+  result.push("Jahre alt.")
+
+  // Wie immer geben wir das Resultat als Text zurück
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe18]", aufgabe18)
