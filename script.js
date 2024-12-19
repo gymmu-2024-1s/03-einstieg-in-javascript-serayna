@@ -66,8 +66,10 @@ export function aufgabe03(args) {
     const currentElement = input[i]
 
     if (currentElement === "e") {
+      // Soll e's zählen wenn es ein e gibt.
       count = count + 1
     } else if (currentElement === "E") {
+      // Macht es auch mit grossen E's
       count++
     }
   }
@@ -201,6 +203,7 @@ export function aufgabe09(args) {
   let has6 = false
 
   if (count === 6) {
+    // Wenn die Anzahl der Zeichen 6 ist, ist es richtig, also "true"
     has6 = true
   }
 
@@ -263,7 +266,7 @@ linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
 
 export function aufgabe13(args) {
   const input = args
-  let lastindex = -1
+  let lastindex = -1 // Neue Variable erstellen
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
@@ -483,7 +486,7 @@ export function aufgabe25(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (i === Math.floor(input.length / 2)) {
-      //Die Methode Math.floor() rundet eine Zahl auf die nächste ganze Zahl ab
+      //Die Methode Math.floor() rundet eine Zahl auf die nächste ganze Zahl
       // do nothing
     } else {
       result.push(currentElement)
@@ -598,6 +601,35 @@ export function EigeneAufgabe3(args) {
 }
 linkupExerciseHandler("[data-click=EigeneAufgabe3]", EigeneAufgabe3)
 
+export function EigeneAufgabe4(args) {
+  const input = args
+  const result = []
+  // Erkenne das Wort Serayna
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "S") {
+      // Wenn es ein "S" ist, gehe weiter und prüfe, ob es "e", "r" , "a" , "y", "n" und "a" gibt
+      if (input[i + 1] === "e") {
+        if (input[i + 2] === "r") {
+          if (input[i + 3] === "a") {
+            if (input[i + 4] === "y") {
+              if (input[i + 5] === "n") {
+                if (input[i + 6] === "a") {
+                  return true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return false // Wenn es nicht erkannt wurde, wird "false" zurückgegeben
+}
+linkupExerciseHandler("[data-click=EigeneAufgabe4]", EigeneAufgabe4)
+
 export function Bubblesort(args) {
   const text = args
   const list = text.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
@@ -647,8 +679,11 @@ export function Selectionsort(args) {
 }
 linkupExerciseHandler("[data-click=Selectionsort]", Selectionsort)
 
-export function Radixsort(input) {
+export function aufgabe(args) {
+  const input = args
   const result = []
+
+  return result.join("")
 }
 
 linkupExerciseHandler("[data-click= Radixsort]", Radixsort)
