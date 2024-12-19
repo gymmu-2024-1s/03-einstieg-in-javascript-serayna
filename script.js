@@ -312,14 +312,15 @@ linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
 export function aufgabe16(args) {
   const input = args
   const result = []
-  //Lese nur bis zum Leerzeichen ein
+  //Lesen Sie die Eingabe bis zum Zeichen '$' als ersten Teil einer Liste ein, und den Rest als den zweiten Teil.
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    if (currentElement === " ") {
-      continue //Macht es weiter
+    if (currentElement === "$") {
+      break
     }
     result.push(currentElement)
   }
+
   return result.join("")
 }
 
@@ -678,14 +679,3 @@ export function Selectionsort(args) {
   return input // Gibt "Input" zurück
 }
 linkupExerciseHandler("[data-click=Selectionsort]", Selectionsort)
-
-export function aufgabe(args) {
-  const input = args
-  const result = []
-
-  return result.join("")
-}
-
-linkupExerciseHandler("[data-click= Radixsort]", Radixsort)
-
-linkupExerciseHandler("[data-click=Bucketsort]", Bucketsort)
