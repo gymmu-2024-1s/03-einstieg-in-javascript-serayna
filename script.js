@@ -543,7 +543,26 @@ linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
 export function aufgabe28(args) {
   const input = args
   const result = []
-  // Teste ob 2 Zeichen von einem Leerschlag getrennt sind.
+  //Testen Sie, ob in der Eingabe 2 Zahlen von einem Leerzeichen getrennt sind.
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === " ") {
+      const nextElement = input[i + 1]
+      const ascii = nextElement.charCodeAt(0)
+      if (ascii >= 48 && ascii <= 57) {
+        const nextnextElement = input[i + 2]
+        const ascii2 = nextnextElement.charCodeAt(0)
+        if (ascii2 >= 48 && ascii2 <= 57) {
+          // do nothing
+        } else {
+          return false
+        }
+      } else {
+        return false
+      }
+    }
+  }
 }
 
 linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
