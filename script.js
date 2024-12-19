@@ -626,7 +626,7 @@ export function EigeneAufgabe4(args) {
     }
   }
 
-  return false // Wenn es nicht erkannt wurde, wird "false" zurückgegeben
+  return false // Wenn es nicht erkannt wurde bis hier, wird "false" zurückgegeben
 }
 linkupExerciseHandler("[data-click=EigeneAufgabe4]", EigeneAufgabe4)
 
@@ -657,7 +657,7 @@ export function Selectionsort(args) {
   for (let i = 0; i < n - 1; i++) {
     // Assume the current position holds
     // the minimum element
-    let min_idx = i
+    let min_idx = i // Neue Variable erstellt
 
     // Iterate through the unsorted portion
     // to find the actual minimum
@@ -675,7 +675,7 @@ export function Selectionsort(args) {
     input[min_idx] = temp
   }
 
-  return input
+  return input // Gibt "Input" zurück
 }
 linkupExerciseHandler("[data-click=Selectionsort]", Selectionsort)
 
@@ -687,3 +687,5 @@ export function aufgabe(args) {
 }
 
 linkupExerciseHandler("[data-click= Radixsort]", Radixsort)
+
+linkupExerciseHandler("[data-click=Bucketsort]", Bucketsort)

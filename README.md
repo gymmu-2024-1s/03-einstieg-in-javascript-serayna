@@ -165,3 +165,5 @@ Testen Sie, ob ein "S" im Text vorkommt
 dann den Ascii-Code wieder in Buchstaben.
 
 ## EigeneAufgabe 04
+
+Testen Sie , ob das Wort "Serayna" im Text vorkommt.
