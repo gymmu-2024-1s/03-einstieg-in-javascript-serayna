@@ -1,3 +1,5 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/dGPk4_Tz)
+
 # Einstieg ins Programmieren mit Javascript
 
 Dieses Projekt bietet viele Aufgaben mit automatischen Tests, bei denen Sie das
@@ -148,3 +150,20 @@ Testen sie, ob eine Eingabe eine Zahl ist.
 
 Testen Sie, ob in der Eingabe 2 Zahlen von einem Leerzeichen getrennt sind.
 Falls ja geben Sie die Summe als Ausgabe aus; sonst Fehlermeldung.
+
+## EigeneAufgabe 01
+
+Ersetzen Sie jedes "u" mit einem ":)"
+
+## EigeneAufgabe 02
+
+Testen Sie, ob ein "S" im Text vorkommt
+
+## EigeneAufgabe 03
+
+Übersetzen Sie den Text in seinen Ascii-Code und rechnen Sie +4. Übersetzen Sie
+dann den Ascii-Code wieder in Buchstaben.
+
+## EigeneAufgabe 04
+
+Testen Sie , ob das Wort "Serayna" im Text vorkommt.
