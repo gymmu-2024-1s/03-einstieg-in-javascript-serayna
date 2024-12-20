@@ -214,21 +214,36 @@ linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
 
 export function aufgabe10(args) {
   const input = args
-  const result = []
-  //Teste ob eine Eingabe ein korrekter RGB Hexcode ist
+  // Überprüft, ob das erste Zeichen ein `#` ist
+  if (input[0] !== "#") {
+    return false // Gibt `false` zurück, wenn das erste Zeichen kein `#` ist
+  }
 
-  let hasCorrectRGB = false
-  for (let i = 0; i < input.length; i++) {
+  // Überprüft, ob die Eingabe genau 7 Zeichen lang ist
+  if (input.length !== 7) {
+    return false
+  }
+
+  // Überprüft, ob die restlichen 6 Zeichen gültige Hexadezimalzeichen sind (0-9, A-F, a-f)
+  for (let i = 1; i < input.length; i++) {
     const currentElement = input[i]
     const ascii = currentElement.charCodeAt(0)
-    if (ascii >= 48 && ascii <= 57) {
-      // Wenn es zwischen 48 und 57 ist, stimmt es
-      hasCorrectRGB = true
-      return true
+
+    // Testet, ob das Zeichen ein gültiges Hexadezimalzeichen ist
+    if (
+      !(
+        (ascii >= 48 && ascii <= 57) || // 0-9
+        (ascii >= 65 && ascii <= 70) || // A-F
+        (ascii >= 97 && ascii <= 102)
+      ) // a-f
+    ) {
+      return false // Gibt `false` zurück, wenn ein ungültiges Zeichen gefunden wurde
     }
   }
-  return false // Gibt false zurück, wenn es nicht stimmt
+
+  return true // Gibt richtig, also true zurück, wenn alle Bedingungen erfüllt worden sind
 }
+
 linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
 
 export function aufgabe11(args) {
@@ -484,17 +499,34 @@ linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
 export function aufgabe25(args) {
   const input = args
   const result = []
-  //Lösche das Zeichen, welches in der Mitte des Textes steht
+  //Hier wirds überprüft, ob die Länge der Eingabe gerade ist
+  if (input.length % 2 === 0) {
+    // Es berechnet den Index der beiden mittleren Zeichen
+    const middleIndex = Math.floor(input.length / 2) - 1
+    const middlePlusOneIndex = middleIndex + 1
 
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    if (i === Math.floor(input.length / 2)) {
-      //Die Methode Math.floor() rundet eine Zahl auf die nächste ganze Zahl
-      // do nothing
-    } else {
-      result.push(currentElement)
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+      // Wenn der Index des aktuellen Zeichens den beiden mittleren Zeichen entspricht, wird es übersprungen
+      if (i === middleIndex || i === middlePlusOneIndex) {
+      } else {
+        result.push(currentElement)
+      }
+    }
+  } else {
+    // Es wird den Index des mittleren Zeichens bei ungerade Länge berechnet
+    const middleIndex = Math.floor(input.length / 2)
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+      // Falls der Index des momentanen Zeichens den mittleren Zeichen gleich ist, wird es übersprungen
+      if (i === middleIndex) {
+        // Überspringe das mittlere Element
+      } else {
+        result.push(currentElement) // Anderfalls, füge das Zeichen hinzu
+      }
     }
   }
+
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe25]", aufgabe25)
