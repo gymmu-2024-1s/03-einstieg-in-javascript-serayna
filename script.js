@@ -359,13 +359,13 @@ export function aufgabe18(args) {
   const result = []
 
   // Hier schreiben wir ganze Worte in die Liste
-  result.push("Sie heissen")
+  result.push("Sie heissen ")
 
   // Wir setzen die Liste dann zusammen, sodass die Name und Alter dann an der richtigen Stelle stehen
   result.push(nameAndAge[0])
-  result.push("und sind")
+  result.push(" und sind ")
   result.push(nameAndAge[1])
-  result.push("Jahre alt.")
+  result.push(" Jahre alt.")
 
   // Wie immer geben wir das Resultat als Text zurück
   return result.join("")
