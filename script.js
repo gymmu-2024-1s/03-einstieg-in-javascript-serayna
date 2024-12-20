@@ -257,6 +257,7 @@ export function aufgabe12(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "e") {
+      // Wenn das currentElement ein "e" ist, return i
       return i
     }
   }
@@ -274,7 +275,7 @@ export function aufgabe13(args) {
       lastindex = i
     }
   }
-  return lastindex
+  return lastindex // Gibt den letzten Index, also "lastindex" zurück
 }
 
 linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
@@ -301,6 +302,7 @@ export function aufgabe15(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === " ") {
+      // Wenn das currentElement ein Leerzeichen ist, hört es auf die Eingabe einzulesen
       break
     }
     result.push(currentElement)
