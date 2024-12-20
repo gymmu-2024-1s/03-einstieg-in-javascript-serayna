@@ -216,7 +216,8 @@ export function aufgabe10(args) {
   const input = args
   // Überprüft, ob das erste Zeichen ein `#` ist
   if (input[0] !== "#") {
-    return false // Gibt `false` zurück, wenn das erste Zeichen kein `#` ist
+    // "!=="" vergleicht Zahlen. Wenn die Werte der Zahlen gleich sind, gibt er "false" zurück. Wenn sie nicht gleich sind, gibt er "true" zurück.
+    return false // Gibt "false" zurück, wenn das erste Zeichen kein `#` ist
   }
 
   // Überprüft, ob die Eingabe genau 7 Zeichen lang ist
@@ -224,7 +225,7 @@ export function aufgabe10(args) {
     return false
   }
 
-  // Überprüft, ob die restlichen 6 Zeichen gültige Hexadezimalzeichen sind (0-9, A-F, a-f)
+  // Überprüft, ob die restlichen 6 Zeichen gültige Hexadezimalzeichen sind, also zwischen 0 und 9, A und F, oder  a und f
   for (let i = 1; i < input.length; i++) {
     const currentElement = input[i]
     const ascii = currentElement.charCodeAt(0)
@@ -237,11 +238,11 @@ export function aufgabe10(args) {
         (ascii >= 97 && ascii <= 102)
       ) // a-f
     ) {
-      return false // Gibt `false` zurück, wenn ein ungültiges Zeichen gefunden wurde
+      return false // Gibt "false" zurück, wenn ein ungültiges Zeichen gefunden wurde
     }
   }
 
-  return true // Gibt richtig, also true zurück, wenn alle Bedingungen erfüllt worden sind
+  return true // Gibt richtig, also "true" zurück, wenn alle Bedingungen erfüllt worden sind
 }
 
 linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
@@ -257,7 +258,7 @@ export function aufgabe11(args) {
   if (input.length > 1) {
     return null
 
-    //--> Der Code gibt null zurück, wenn der Input mehr als ein Zeichen enthält
+    //Code gibt null zurück, wenn der Input mehr als ein Zeichen enthält
   } else if (input.length === 0) {
     return null // Gibt 0 zurück
   }
@@ -329,7 +330,7 @@ linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
 export function aufgabe16(args) {
   const input = args
   const result = []
-  //Lesen Sie die Eingabe bis zum Zeichen '$' als ersten Teil einer Liste ein, und den Rest als den zweiten Teil.
+  //Lesen Sie die Eingabe bis zum Zeichen "$" als ersten Teil einer Liste ein, und den Rest als den zweiten Teil.
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "$") {
@@ -421,7 +422,7 @@ export function aufgabe20(args) {
       }
     }
   }
-  return allGood //Gibt uns das "allGood"zurück, da dieses "false" ist, gibt es "false" zurück
+  return allGood //Gibt uns das "allGood" zurück, da dieses "false" ist, gibt es "false" zurück
 }
 linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
 
@@ -429,7 +430,7 @@ export function aufgabe21(args) {
   const input = args
   const result = []
 
-  //Kehre die Eingabe um
+  // Kehre die Eingabe um
   for (let i = input.length - 1; i >= 0; i--) {
     const currentElement = input[i]
     result.push(currentElement)
@@ -448,7 +449,7 @@ export function aufgabe22(args) {
     } else if (currentElement === "") {
       // do nothing
     } else {
-      result.push(currentElement) //Behalte alle anderen Eingaben bei
+      result.push(currentElement) // Behalte alle anderen Eingaben bei
     }
   }
 
@@ -458,7 +459,7 @@ linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
 
 export function aufgabe23(args) {
   const input = args
-  const result = [] //Leere Liste, in der wir das Resultat anhängen
+  const result = [] // Leere Liste, in der wir das Resultat anhängen
   const firstelement = input[0]
 
   // Hänge firstelement an die Liste an
@@ -469,7 +470,7 @@ export function aufgabe23(args) {
     result.push(currentElement)
   }
 
-  result.push(firstelement) //Schreibe das erste Zeichen am Ende
+  result.push(firstelement) // Schreibe das erste Zeichen am Ende
 
   return result.join("")
 }
