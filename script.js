@@ -49,7 +49,7 @@ export function aufgabe02(args) {
   const result = []
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    const uppercaseletter = currentElement.toUpperCase()
+    const uppercaseletter = currentElement.toUpperCase() // Der Text wir gross geschrieben
     result.push(uppercaseletter)
   }
 
@@ -183,7 +183,7 @@ export function aufgabe07(args) {
     if (currentElement === "u") {
       if (input[i + 1] === "n") {
         if (input[i + 2] === "d") {
-          return true
+          return true // Wenn "u,n,d" erkannt wurden, gibt es true zurück
         }
       }
     }
@@ -207,7 +207,7 @@ export function aufgabe09(args) {
     has6 = true
   }
 
-  return has6
+  return has6 // Gibt "has6" zurück. In unserem Fall ist dies "false", da die Eingabe mehr als 6 Zeichen enthält.
 }
 
 linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
@@ -302,7 +302,7 @@ export function aufgabe14(args) {
     if (input[i] === "e") {
       count++
       if (count === 3) {
-        return i
+        return i // wenn es 3 ist, gebe i zurück
       }
     }
   }
@@ -413,7 +413,7 @@ export function aufgabe20(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === ".") {
-      // prüfe ob das nächste Zeichen ein Leerzeichen ist
+      // Prüfe ob das nächste Zeichen ein Leerzeichen ist
       if (input[i + 1] === " ") {
         // mache nichts
       } else {
@@ -499,15 +499,16 @@ linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
 export function aufgabe25(args) {
   const input = args
   const result = []
-  //Hier wirds überprüft, ob die Länge der Eingabe gerade ist
+  //Hier wird geprüft, ob die Länge der Eingabe gerade ist
   if (input.length % 2 === 0) {
-    // Es berechnet den Index der beiden mittleren Zeichen
-    const middleIndex = Math.floor(input.length / 2) - 1
+    //  Berechnet den Index der beiden mittleren Zeichen
+    const middleIndex = Math.floor(input.length / 2) - 1 //Die Methode Math.floor() rundet eine Zahl auf die nächste ganze Zahl
+
     const middlePlusOneIndex = middleIndex + 1
 
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i]
-      // Wenn der Index des aktuellen Zeichens den beiden mittleren Zeichen entspricht, wird es übersprungen
+      // Wenn der Index des currentElements und der Index der beiden mittleren Zeichen gleich ist, wird es übersprungen
       if (i === middleIndex || i === middlePlusOneIndex) {
       } else {
         result.push(currentElement)
@@ -518,11 +519,11 @@ export function aufgabe25(args) {
     const middleIndex = Math.floor(input.length / 2)
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i]
-      // Falls der Index des momentanen Zeichens den mittleren Zeichen gleich ist, wird es übersprungen
+      // Falls der Index des CurrentElementsund  der mittleren Zeichen gleich ist, wird übersprungen
       if (i === middleIndex) {
         // Überspringe das mittlere Element
       } else {
-        result.push(currentElement) // Anderfalls, füge das Zeichen hinzu
+        result.push(currentElement) // Sonst, füge das Zeichen hinzu
       }
     }
   }
@@ -673,6 +674,31 @@ export function EigeneAufgabe4(args) {
 }
 linkupExerciseHandler("[data-click=EigeneAufgabe4]", EigeneAufgabe4)
 
+export function EigeneAufgabe5(input) {
+  let summe = 0
+  let currentZahl = ""
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (
+      currentElement.charCodeAt(0) >= 48 &&
+      currentElement.charCodeAt(0) <= 57
+    ) {
+      currentZahl += currentElement
+    } else if (currentZahl !== "") {
+      summe += parseInt(currentZahl)
+      currentZahl = ""
+    }
+  }
+
+  if (currentZahl !== "") {
+    summe += parseInt(currentZahl)
+  }
+
+  return summe
+}
+linkupExerciseHandler("[data-click=EigeneAufgabe5]", EigeneAufgabe5)
+
 export function Bubblesort(args) {
   const text = args
   const list = text.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
@@ -706,6 +732,7 @@ export function Selectionsort(args) {
     // to find the actual minimum
     for (let j = i + 1; j < n; j++) {
       if (input[j] < input[min_idx]) {
+        // Markiert das kleinste Element, welches bis jetzt gefunden worden ist
         // Update min_idx if a smaller element is found
         min_idx = j
       }
@@ -715,7 +742,7 @@ export function Selectionsort(args) {
     // correct position
     let temp = input[i]
     input[i] = input[min_idx]
-    input[min_idx] = temp
+    input[min_idx] = temp //  Wir setzen den Wert von "temp" an die Stelle von "input[min_idx]""
   }
 
   return input // Gibt "Input" zurück
