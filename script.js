@@ -675,27 +675,28 @@ export function EigeneAufgabe4(args) {
 linkupExerciseHandler("[data-click=EigeneAufgabe4]", EigeneAufgabe4)
 
 export function EigeneAufgabe5(input) {
-  let summe = 0
+  let summe = 0 // Wir erstellen zu erst neue Variablen
   let currentZahl = ""
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (
-      currentElement.charCodeAt(0) >= 48 &&
+      currentElement.charCodeAt(0) >= 48 && // Wenn das Zeichen grösser ist als 48, aber kleiner, als 57, ist es eine Zahl zwischen  0 und 9
       currentElement.charCodeAt(0) <= 57
     ) {
-      currentZahl += currentElement
+      currentZahl += currentElement // Wir addieren die Zahlen
     } else if (currentZahl !== "") {
-      summe += parseInt(currentZahl)
+      summe += parseInt(currentZahl) // parseInt wandelt Zeichen in ganze Zahlen um. Die Summe wird um die Zahl erhöht, die im Text steht.
       currentZahl = ""
     }
   }
 
   if (currentZahl !== "") {
+    // "!=="" vergleicht Zahlen. Wenn die Werte der Zahlen gleich sind, gibt er "false" zurück. Wenn sie nicht gleich sind, gibt er "true" zurück.
     summe += parseInt(currentZahl)
   }
 
-  return summe
+  return summe // Die gezählte Summe wird als Zhal zurückgegeben
 }
 linkupExerciseHandler("[data-click=EigeneAufgabe5]", EigeneAufgabe5)
 
@@ -764,9 +765,9 @@ export function Bucketsort(args) {
 
   // Eimer sortieren und zusammenführen
   return buckets
-    .map((bucket) => bucket.sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0))) // Sortiere jedes Bucket
-    .flat() // Alle sortierten Buckets werden flach zusammengeführt
-    .join("") // Als String zusammenfügen
+    .map((bucket) => bucket.sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0))) // Sortiert jedes Bucket
+    .flat() // Alle sortierten Buckets werden zusammengeführt
+    .join("") // Wird zusammengefügt
 }
 
 linkupExerciseHandler("[data-click=Bucketsort]", Bucketsort)
