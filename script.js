@@ -693,7 +693,7 @@ export function Bucketsort(args) {
   const list = text.split("") // Wandelt den Text in eine Liste um
 
   // 256 Buckets für alle ASCII-Zeichen (von 0 bis 255)
-  let buckets = new Array(256).fill().map(() => [])
+  let buckets = new Array(256).fill().map(() => []) // Erstellt ein Array mit 256 leeren Arrays // .fill wird verwendet um die Arrays zu füllen
 
   // Elemente in die Buckets verteilen
   for (let i = 0; i < list.length; i++) {
