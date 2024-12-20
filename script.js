@@ -541,28 +541,17 @@ export function aufgabe27(args) {
 linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
 
 export function aufgabe28(args) {
-  const input = args
-  const result = []
-  //Testen Sie, ob in der Eingabe 2 Zahlen von einem Leerzeichen getrennt sind.
+  const input = args.split(" ") // Teilt die Eingabe am Leerzeichen
 
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    if (currentElement === " ") {
-      const nextElement = input[i + 1]
-      const ascii = nextElement.charCodeAt(0)
-      if (ascii >= 48 && ascii <= 57) {
-        const nextnextElement = input[i + 2]
-        const ascii2 = nextnextElement.charCodeAt(0)
-        if (ascii2 >= 48 && ascii2 <= 57) {
-          // do nothing
-        } else {
-          return false
-        }
-      } else {
-        return false
-      }
+  // Prüft, ob es genau 2 Teile gibt
+  if (input.length === 2) {
+    // Wenn beide Teile Zahlen sind, wird die Summe berechnet und zurückgegeben
+    if (+input[0] == input[0] && +input[1] == input[1]) {
+      return +input[0] + +input[1] // Gibt die Summe der beiden Zahlen zurück
     }
   }
+
+  return "Fehler"
 }
 
 linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
@@ -708,7 +697,7 @@ export function Bucketsort(args) {
 
   // Elemente in die Buckets verteilen
   for (let i = 0; i < list.length; i++) {
-    let index = list[i].charCodeAt(0) // ASCII-Wert des Zeichens
+    let index = list[i].charCodeAt(0) // Die ASCII-Werte der Zeichen
     buckets[index].push(list[i])
   }
 
